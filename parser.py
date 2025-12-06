@@ -82,24 +82,10 @@ def p_standard_type(p):
 
 
 def p_array_type(p):
-    """array_type : ARRAY LBRACKET dim RBRACKET IDENTIFIER standard_type
-                  | ARRAY LBRACKET dim RBRACKET OF standard_type"""
-    # The original grammar uses "OF", but many variants
-    # use a token OF. If OF isn't in your lexer, you can
-    # adjust this rule accordingly.
-    # For simplicity, assume:
-    #   ARRAY [ dim ] OF StandardType
-    # The above prod with IDENTIFIER is a placeholder if teacher used a variation.
-    # You can simplify:
-    #
-    #   array_type : ARRAY LBRACKET dim RBRACKET OF standard_type
-    #
-    # and remove IDENTIFIER version if not needed.
-
-    # This rule is a little generic. We’ll just build an ArrayType node.
+    """array_type : ARRAY LBRACKET dim RBRACKET OF standard_type"""
+    # ARRAY [ dim ] OF StandardType
     dim_node = p[3]
-    # pick the last symbol as standard_type
-    std_type = p[len(p) - 1]
+    std_type = p[6]
     p[0] = ASTNode("ArrayType", children=[dim_node, std_type])
 
 

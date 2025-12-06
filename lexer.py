@@ -28,6 +28,7 @@ reserved = {
     "VAR": "VAR",
     "WHILE": "WHILE",
     "WRITE": "WRITE",
+    "OF": "OF",
 }
 
 # Token names
@@ -56,8 +57,8 @@ tokens = [
     "RPAREN",
     "LBRACKET",
     "RBRACKET",
-    "LBRACE",
-    "RBRACE",
+    # "LBRACE",
+    # "RBRACE",
     "COMMA",
     "SEMI",
     "COLON",
@@ -78,8 +79,8 @@ t_LPAREN   = r'\('
 t_RPAREN   = r'\)'
 t_LBRACKET = r'\['
 t_RBRACKET = r'\]'
-t_LBRACE   = r'\{'
-t_RBRACE   = r'\}'
+# t_LBRACE   = r'\{'
+# t_RBRACE   = r'\}'
 t_COMMA    = r','
 t_SEMI     = r';'
 t_COLON    = r':'
